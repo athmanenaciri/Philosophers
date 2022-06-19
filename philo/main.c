@@ -6,7 +6,7 @@
 /*   By: anaciri <anaciri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/17 15:11:51 by anaciri           #+#    #+#             */
-/*   Updated: 2022/06/17 15:59:59 by anaciri          ###   ########.fr       */
+/*   Updated: 2022/06/18 09:17:48 by anaciri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,13 +28,9 @@ int main(int ac, char **av)
 		return(1);
 	if(ac == 5)
 		data.num_of_meals = -1;
-	
-	printf("%d", data.num_of_meals);
 	else
-	{
 		if(ft_atoi(av[5], &data.num_of_meals))
 			return(1);
-	}
 
 
 

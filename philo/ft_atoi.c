@@ -6,7 +6,7 @@
 /*   By: anaciri <anaciri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/15 15:56:36 by anaciri           #+#    #+#             */
-/*   Updated: 2022/06/15 18:19:20 by anaciri          ###   ########.fr       */
+/*   Updated: 2022/06/18 09:12:34 by anaciri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ int	ft_atoi(char *str, int *nbr)
 	while (str[i] >= '0' && str[i] <= '9')
 	{
 		res *= 10;
-		res -= str[i] - '0';
+		res += str[i] - '0';
 		i++;
 	}
 	*nbr = res;
