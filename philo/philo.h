@@ -6,7 +6,7 @@
 /*   By: anaciri <anaciri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/17 15:10:35 by anaciri           #+#    #+#             */
-/*   Updated: 2022/06/18 11:49:41 by anaciri          ###   ########.fr       */
+/*   Updated: 2022/06/19 15:53:48 by anaciri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ typedef struct s_data
 
 typedef struct s_philo
 {
-	int	id;
+	int	nbr;
 	int	meals;
 	
 }t_philo;

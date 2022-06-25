@@ -6,7 +6,7 @@
 /*   By: anaciri <anaciri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/17 15:11:51 by anaciri           #+#    #+#             */
-/*   Updated: 2022/06/18 09:17:48 by anaciri          ###   ########.fr       */
+/*   Updated: 2022/06/20 14:18:23 by anaciri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,13 +31,7 @@ int main(int ac, char **av)
 	else
 		if(ft_atoi(av[5], &data.num_of_meals))
 			return(1);
-
-
-
-
-
-
-
-		
+	if(data.num_of_meals == 0)
+		return(1);
 	return(0);
 }
