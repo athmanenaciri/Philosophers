@@ -38,16 +38,9 @@ int	create_philo(t_data *data)
 
 		pthread_mutex_init(&philos[i].left, NULL);
 		if(i != 0)
-		{
 			philos[i].right = &philos[i-1].left;
-			pthread_mutex_init(&philos[i-1].right, NULL);
-		}
 		else
-		{
-			philos[i].right = &philos[philos->data->num_of_philo].left;
-			pthread_mutex_init(&philos[i-1].right, NULL);
-		}
-
+			philos[i].right = &philos[philos->data->num_of_philo - 1].left;
 		//protect thread 
 		pthread_create(&philos[i].thread, NULL, routine, &philos[i]);
 
@@ -56,7 +49,4 @@ int	create_philo(t_data *data)
 	return(0);
 }
 
-
-
-int pthread_mutex_init(pthread_mutex_t *restrict mutex, const pthread_mutexattr_t *restrict attr);
-int pthread_mutex_lock(pthread_mutex_t *mutex);
+//int pthread_mutex_lock(pthread_mutex_t *mutex);
