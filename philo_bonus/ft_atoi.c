@@ -6,11 +6,11 @@
 /*   By: anaciri <anaciri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/15 15:56:36 by anaciri           #+#    #+#             */
-/*   Updated: 2022/06/25 17:47:35 by anaciri          ###   ########.fr       */
+/*   Updated: 2022/06/25 17:48:02 by anaciri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "philo.h"
+#include "philo_bonus.h"
 
 int	ft_check_it(char *str)
 {
