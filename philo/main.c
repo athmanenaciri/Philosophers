@@ -6,7 +6,7 @@
 /*   By: anaciri <anaciri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/17 15:11:51 by anaciri           #+#    #+#             */
-/*   Updated: 2022/07/20 22:48:14 by anaciri          ###   ########.fr       */
+/*   Updated: 2022/07/21 17:01:03 by iait-bel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,5 @@ int main(int ac, char **av)
 	data.start_time = my_time();		
 	if(create_philo(&data))
 		return(1);
-	
-	while(1);
 	return(0);
 }

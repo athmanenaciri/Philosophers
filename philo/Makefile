@@ -6,15 +6,15 @@
 #    By: anaciri <anaciri@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/17 15:12:36 by anaciri           #+#    #+#              #
-#    Updated: 2022/07/20 22:49:27 by anaciri          ###   ########.fr        #
+#    Updated: 2022/07/21 17:00:43 by iait-bel         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC = cc
 
-CFLAGS = -Wall -Werror -Wextra
+CFLAGS = -Wall -Werror -Wextra -g
 DBUILD = build
-FILES = main ft_atoi generate_threads my_time between_times
+FILES = main ft_atoi generate_threads my_time between_times ft_printf is_died
 	
 OBJS = $(addprefix $(DBUILD)/, $(FILES:=.o))
 

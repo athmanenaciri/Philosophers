@@ -6,7 +6,7 @@
 /*   By: anaciri <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/20 22:34:40 by anaciri           #+#    #+#             */
-/*   Updated: 2022/07/20 22:53:14 by anaciri          ###   ########.fr       */
+/*   Updated: 2022/07/21 17:49:59 by iait-bel         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,23 +21,25 @@ void	*routine(void *ptr)
 		usleep(100);
 	while(1)
 	{
-		printf(" %lu %d is thinking\n", between_times(philo->data->start_time), philo->nbr);	
+		ft_printf(philo, " %lu %d is thinking\n");	
 		pthread_mutex_lock(&philo->left);
-		printf(" %lu %d has taken a fork\n", between_times(philo->data->start_time), philo->nbr);
+		ft_printf(philo, " %lu %d has taken a fork\n");
 
 		pthread_mutex_lock(philo->right);
-		printf("%lu %d has taken a fork\n", between_times(philo->data->start_time), philo->nbr);
+		ft_printf(philo, " %lu %d has taken a fork\n");
 
-		printf(" %lu %d is eating\n", between_times(philo->data->start_time), philo->nbr);
+		ft_printf(philo, " %lu %d is eating\n");
 		usleep(philo->data->time_to_eat * 1000);
+		philo->meals += 1;
+		philo->last_meal = my_time();
 
 		pthread_mutex_unlock(&philo->left);
 		pthread_mutex_unlock(philo->right);
 
-		printf(" %lu %d is sleeping\n", between_times(philo->data->start_time), philo->nbr);
+		ft_printf(philo, " %lu %d is sleeping\n");
 		usleep(philo->data->time_to_sleep * 1000);
 		
-		//printf("timestamp_in_ms %d died\n", philo->nbr);
+		//ft_printf("timestamp_in_ms %d died\n", philo->nbr);
 	}
 	return(NULL);
 }
@@ -67,13 +69,15 @@ int	create_philo(t_data *data)
 		i++;
 	}
 	data->start_time = my_time();
+	pthread_mutex_init(&data->print_lock, NULL);  //ache kadir function? odyalache dik NULL.
 	i= 0;
 	while(i < num)
 	{
+		philos[i].last_meal = my_time();
 		pthread_create(&philos[i].thread, NULL, routine, &philos[i]);
 		i++;
 	}
+	i = 0;
+	while(!is_died(philos, data));
 	return(0);
 }
-
-int pthread_mutex_lock(pthread_mutex_t *mutex);
