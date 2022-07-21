@@ -6,7 +6,7 @@
 #    By: anaciri <anaciri@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/17 15:12:36 by anaciri           #+#    #+#              #
-#    Updated: 2022/07/19 11:11:02 by anaciri          ###   ########.fr        #
+#    Updated: 2022/07/20 22:49:27 by anaciri          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ CC = cc
 
 CFLAGS = -Wall -Werror -Wextra
 DBUILD = build
-FILES = main ft_atoi generate_threads
+FILES = main ft_atoi generate_threads my_time between_times
 	
 OBJS = $(addprefix $(DBUILD)/, $(FILES:=.o))
 

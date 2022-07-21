@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   generate_threads.c                                 :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: anaciri <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/07/20 22:34:40 by anaciri           #+#    #+#             */
+/*   Updated: 2022/07/20 22:53:14 by anaciri          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "philo.h"
 
 void	*routine(void *ptr)
@@ -9,24 +21,23 @@ void	*routine(void *ptr)
 		usleep(100);
 	while(1)
 	{
-		printf(" %d is thinking\n", philo->nbr);
-		
+		printf(" %lu %d is thinking\n", between_times(philo->data->start_time), philo->nbr);	
 		pthread_mutex_lock(&philo->left);
-		printf(" %d has taken a fork\n" ,philo->nbr);
+		printf(" %lu %d has taken a fork\n", between_times(philo->data->start_time), philo->nbr);
 
 		pthread_mutex_lock(philo->right);
-		printf(" %d has taken a fork\n" ,philo->nbr);
+		printf("%lu %d has taken a fork\n", between_times(philo->data->start_time), philo->nbr);
 
-		printf(" %d is eating\n" ,philo->nbr);
+		printf(" %lu %d is eating\n", between_times(philo->data->start_time), philo->nbr);
 		usleep(philo->data->time_to_eat * 1000);
 
 		pthread_mutex_unlock(&philo->left);
 		pthread_mutex_unlock(philo->right);
 
-		printf(" %d is sleeping\n" ,philo->nbr);
+		printf(" %lu %d is sleeping\n", between_times(philo->data->start_time), philo->nbr);
 		usleep(philo->data->time_to_sleep * 1000);
 		
-		//printf(" %d died\n", philo->nbr);
+		//printf("timestamp_in_ms %d died\n", philo->nbr);
 	}
 	return(NULL);
 }
@@ -47,16 +58,15 @@ int	create_philo(t_data *data)
 		philos[i].nbr = i+1;
 		philos[i].meals = 0;
 		philos[i].data = data;
-
-		pthread_mutex_init(&philos[i].left, NULL);
+		pthread_mutex_init(&philos[i].left, NULL);  //ache kadir function? odyalache dik NULL.
 		if(i != 0)
 			philos[i].right = &philos[i-1].left;
 		else
 			philos[i].right = &philos[philos->data->num_of_philo - 1].left;
 		//protect thread 
-
 		i++;
 	}
+	data->start_time = my_time();
 	i= 0;
 	while(i < num)
 	{
