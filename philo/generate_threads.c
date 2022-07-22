@@ -6,7 +6,7 @@
 /*   By: anaciri <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/20 22:34:40 by anaciri           #+#    #+#             */
-/*   Updated: 2022/07/21 20:12:09 by iait-bel         ###   ########.fr       */
+/*   Updated: 2022/07/22 21:18:37 by anaciri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void	*routine(void *ptr)
 
 	philo = (t_philo*)ptr;
 	if((philo->nbr % 2) == 0)
-		usleep(0);
+		usleep(10);
 	while(1)
 	{
 		ft_printf(philo, " %lu %d is thinking\n");	
@@ -29,7 +29,7 @@ void	*routine(void *ptr)
 		ft_printf(philo, " %lu %d has taken a fork\n");
 
 		ft_printf(philo, " %lu %d is eating\n");
-		philo->last_meal = between_times();
+		philo->last_meal = between_times(philo->data->start_time);
 		ft_usleep(philo->data->time_to_eat);
 		philo->meals += 1;
 
@@ -73,7 +73,7 @@ int	create_philo(t_data *data)
 	i= 0;
 	while(i < num)
 	{
-		philos[i].last_meal = my_time();
+		philos[i].last_meal = 0;
 		pthread_create(&philos[i].thread, NULL, routine, &philos[i]);
 		i++;
 	}

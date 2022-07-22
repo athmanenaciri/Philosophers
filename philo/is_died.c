@@ -6,7 +6,7 @@
 /*   By: hherba <hherba@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/21 16:44:35 by iait-bel          #+#    #+#             */
-/*   Updated: 2022/07/22 14:57:34 by hherba           ###   ########.fr       */
+/*   Updated: 2022/07/22 21:19:27 by anaciri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,13 +19,16 @@ int is_died(t_philo *philos, t_data *data)
 	i = 0;
 	while(i < data->num_of_philo)
 	{
-		if((philos[i].last_meal - my_time()) > data->time_to_eat)
+		if((between_times(data->start_time) - philos[i].last_meal) > data->time_to_die)
 		{
-			printf("died");
+			printf("died\n");
+			printf("my time :%lu\n", my_time());
+			printf("between times : %lu\n", between_times(data->start_time));
+			printf("last meal : %lu\n", philos[i].last_meal);
+			printf("time to die : %d\n", data->time_to_die);
+			printf("philo li mat : %d", philos[i].nbr);
 			return(1);
 		}
-		//printf("#%lu#\n", philos[i].last_meal);
-		//printf("(%lu)", (philos[i].last_meal - my_time()));
 		i++;
 	}
 	// exit(0);
