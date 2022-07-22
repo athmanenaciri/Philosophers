@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   is_died.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: iait-bel <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: hherba <hherba@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/21 16:44:35 by iait-bel          #+#    #+#             */
-/*   Updated: 2022/07/21 20:00:10 by iait-bel         ###   ########.fr       */
+/*   Updated: 2022/07/22 14:57:34 by hherba           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int is_died(t_philo *philos, t_data *data)
 			printf("died");
 			return(1);
 		}
-		printf("#%lu#\n", philos[i].last_meal);
+		//printf("#%lu#\n", philos[i].last_meal);
 		//printf("(%lu)", (philos[i].last_meal - my_time()));
 		i++;
 	}

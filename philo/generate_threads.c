@@ -18,7 +18,7 @@ void	*routine(void *ptr)
 
 	philo = (t_philo*)ptr;
 	if((philo->nbr % 2) == 0)
-		usleep(100);
+		usleep(0);
 	while(1)
 	{
 		ft_printf(philo, " %lu %d is thinking\n");	
@@ -29,15 +29,15 @@ void	*routine(void *ptr)
 		ft_printf(philo, " %lu %d has taken a fork\n");
 
 		ft_printf(philo, " %lu %d is eating\n");
-		usleep(philo->data->time_to_eat * 1000);
+		philo->last_meal = between_times();
+		ft_usleep(philo->data->time_to_eat);
 		philo->meals += 1;
-		philo->last_meal = my_time();
 
 		pthread_mutex_unlock(&philo->left);
 		pthread_mutex_unlock(philo->right);
 
 		ft_printf(philo, " %lu %d is sleeping\n");
-		usleep(philo->data->time_to_sleep * 1000);
+		ft_usleep(philo->data->time_to_sleep);
 		
 		//ft_printf("timestamp_in_ms %d died\n", philo->nbr);
 	}

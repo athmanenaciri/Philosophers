@@ -14,7 +14,7 @@ CC = cc
 
 CFLAGS = -Wall -Werror -Wextra -g
 DBUILD = build
-FILES = main ft_atoi generate_threads my_time between_times ft_printf is_died
+FILES = main ft_atoi generate_threads my_time between_times ft_printf is_died ft_usleep
 	
 OBJS = $(addprefix $(DBUILD)/, $(FILES:=.o))
 

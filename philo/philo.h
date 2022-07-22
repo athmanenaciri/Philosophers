@@ -48,5 +48,6 @@ long	my_time(void);
 long	between_times(long before);
 void	ft_printf(t_philo *philo, char *format);
 int is_died(t_philo *philos, t_data *data);
+void	ft_usleep(long time_ms);
 
 #endif
