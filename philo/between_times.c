@@ -6,7 +6,7 @@
 /*   By: anaciri <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/20 19:35:37 by anaciri           #+#    #+#             */
-/*   Updated: 2022/07/22 21:25:31 by anaciri          ###   ########.fr       */
+/*   Updated: 2022/07/23 14:56:46 by anaciri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,5 @@ long	between_times(long before)
 
 	now = my_time();
 	def = now - before;
-	return(def);
+	return (def);
 }
-

@@ -6,7 +6,7 @@
 /*   By: anaciri <anaciri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/15 15:56:36 by anaciri           #+#    #+#             */
-/*   Updated: 2022/06/25 17:47:35 by anaciri          ###   ########.fr       */
+/*   Updated: 2022/07/23 14:57:26 by anaciri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int	ft_check_it(char *str)
 		if (str[i] == '-' || str[i] == '+')
 		{
 			if (str[i] == '-')
-				return(1);
+				return (1);
 			i++;
 		}
 		while (str[i])
