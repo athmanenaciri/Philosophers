@@ -6,7 +6,7 @@
 /*   By: anaciri <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/20 19:02:23 by anaciri           #+#    #+#             */
-/*   Updated: 2022/07/20 19:29:24 by anaciri          ###   ########.fr       */
+/*   Updated: 2022/07/23 17:00:40 by anaciri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,11 @@
 
 long	my_time(void)
 {
-	struct timeval time;
-	long mlsec;
-	
+	struct timeval	time;
+	long			mlsec;
+
 	gettimeofday(&time, NULL);
 	mlsec = time.tv_sec * 1000;
-	mlsec = mlsec + (time.tv_usec / 1000);	
-	return(mlsec);
+	mlsec = mlsec + (time.tv_usec / 1000);
+	return (mlsec);
 }
