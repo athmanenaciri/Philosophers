@@ -6,7 +6,7 @@
 /*   By: anaciri <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/20 22:34:40 by anaciri           #+#    #+#             */
-/*   Updated: 2022/07/24 16:20:07 by anaciri          ###   ########.fr       */
+/*   Updated: 2022/07/24 18:50:46 by anaciri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,19 +73,19 @@ void	ft_create_philo(int num, t_philo *philos, t_data *data)
 
 int	ft_destroy(t_philo *philos)
 {
-	int i;
-	int num;
+	int	i;
+	int	num;
 
 	i = 0;
 	num = philos->data->num_of_philo;
-	while(i < num)
+	while (i < num)
 	{
 		pthread_mutex_destroy(&philos[i].left);
 		i++;
 	}
 	pthread_mutex_destroy(&philos->data->print_lock);
 	free(philos);
-	return(1);
+	return (1);
 }
 
 int	create_philo(t_data *data)
@@ -105,7 +105,7 @@ int	create_philo(t_data *data)
 	while (i < num)
 	{
 		philos[i].last_meal = 0;
-		if(pthread_create (&philos[i].thread, NULL, routine, &philos[i]) == -1)
+		if (pthread_create (&philos[i].thread, NULL, routine, &philos[i]) == -1)
 			ft_destroy(philos);
 		i++;
 	}

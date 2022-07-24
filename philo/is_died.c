@@ -6,7 +6,7 @@
 /*   By: hherba <hherba@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/21 16:44:35 by iait-bel          #+#    #+#             */
-/*   Updated: 2022/07/24 16:36:12 by anaciri          ###   ########.fr       */
+/*   Updated: 2022/07/24 18:50:06 by anaciri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,5 @@ int	is_died(t_philo *philos, t_data *data)
 		i++;
 	}
 	usleep(10);
-	if(is_done == 1)
-		printf("\n___is_sone___\n");
 	return (is_done);
 }
