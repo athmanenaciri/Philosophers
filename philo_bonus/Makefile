@@ -14,7 +14,7 @@ CC = cc
 
 CFLAGS = -Wall -Werror -Wextra
 DBUILD = build
-FILES_BONUS = main ft_atoi
+FILES_BONUS = main_bonus ft_atoi_bonus generate_threads_bonus my_time_bonus between_times_bonus ft_printf_bonus is_died_bonus ft_usleep_bonus
 	
 OBJS_BONUS = $(addprefix $(DBUILD)/, $(FILES_BONUS:=.o))
 
