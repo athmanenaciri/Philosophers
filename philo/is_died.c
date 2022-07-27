@@ -38,6 +38,5 @@ int	is_died(t_philo *philos, t_data *data)
 		}
 		i++;
 	}
-	usleep(10);
-	return (is_done);
+	return (usleep(10), is_done);
 }

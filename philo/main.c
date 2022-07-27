@@ -35,7 +35,7 @@ int	setup_data(t_data *data, char **av, int ac)
 int	main(int ac, char **av)
 {
 	t_data	data;
-	
+
 	data.stop = 0;
 	while (ac > 6 || ac < 5)
 		return (1);
