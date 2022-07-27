@@ -6,7 +6,7 @@
 /*   By: anaciri <anaciri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/17 15:11:51 by anaciri           #+#    #+#             */
-/*   Updated: 2022/07/24 16:12:06 by anaciri          ###   ########.fr       */
+/*   Updated: 2022/07/27 14:59:19 by anaciri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,8 @@ int	setup_data(t_data *data, char **av, int ac)
 int	main(int ac, char **av)
 {
 	t_data	data;
-
+	
+	data.stop = 0;
 	while (ac > 6 || ac < 5)
 		return (1);
 	if (setup_data(&data, av, ac))

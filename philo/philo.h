@@ -6,14 +6,13 @@
 /*   By: anaciri <anaciri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/17 15:10:35 by anaciri           #+#    #+#             */
-/*   Updated: 2022/07/23 17:04:28 by anaciri          ###   ########.fr       */
+/*   Updated: 2022/07/27 14:59:04 by anaciri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PHILO_H
 # define PHILO_H
 # include <stdlib.h>
-# include <sys/_types/_timeval.h>
 # include <sys/time.h>
 # include <unistd.h>
 # include <stdio.h>
@@ -27,6 +26,7 @@ typedef struct s_data
 	int				time_to_sleep;
 	int				num_of_meals;
 	long			start_time;
+	int				stop;
 	pthread_mutex_t	print_lock;
 }t_data;
 
